@@ -4,7 +4,7 @@
   "author": "Vox Pupuli",
   "summary": "Forked Puppet module to manage Vault (https://vaultproject.io)",
   "license": "Apache-2.0",
-  "source": "https://github.com/voxpupuli/puppet-vault.git",
+  "source": "https://github.com/sasudi90/puppet-vault.git",
   "project_page": "https://github.com/voxpupuli/puppet-vault",
   "issues_url": "https://github.com/voxpupuli/puppet-vault/issues",
   "tags": [
