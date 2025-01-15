@@ -93,7 +93,7 @@ class vault (
   $manage_group                          = true,
   $bin_dir                               = $vault::params::bin_dir,
   $manage_config_file                    = true,
-  Enum['server', 'agent'] $mode          = 'server',
+  Enum['server', 'agent'] $mode          = 'agent',
   $config_mode                           = '0750',
   $purge_config_dir                      = true,
   $download_url                          = undef,
