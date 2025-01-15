@@ -152,3 +152,4 @@ class vault (
 
   Class['vault::install'] -> Class['vault::config']
   Class['vault::config'] ~> Class['vault::service']
+}
