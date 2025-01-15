@@ -15,6 +15,8 @@ class vault::config {
     }
   }
 
+# TODO:
+# de basic parameters heb je getest, nu stuff zoals telemetry checken
   if $vault::manage_config_file {
     case $vault::mode {
       'server': {
