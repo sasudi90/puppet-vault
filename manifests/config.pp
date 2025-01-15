@@ -16,19 +16,37 @@ class vault::config {
   }
 
   if $vault::manage_config_file {
-    $_config_hash = delete_undef_values({
-        'listener'          => $vault::listener,
-        'storage'           => $vault::storage,
-        'ha_storage'        => $vault::ha_storage,
-        'seal'              => $vault::seal,
-        'telemetry'         => $vault::telemetry,
-        'disable_cache'     => $vault::disable_cache,
-        'default_lease_ttl' => $vault::default_lease_ttl,
-        'max_lease_ttl'     => $vault::max_lease_ttl,
-        'disable_mlock'     => $vault::disable_mlock,
-        'ui'                => $vault::enable_ui,
-        'api_addr'          => $vault::api_addr,
-    })
+    case $vault::mode {
+      'server': {
+        $_config_hash = delete_undef_values({
+            'listener'          => $vault::listener,
+            'storage'           => $vault::storage,
+            'ha_storage'        => $vault::ha_storage,
+            'seal'              => $vault::seal,
+            'telemetry'         => $vault::telemetry,
+            'disable_cache'     => $vault::disable_cache,
+            'default_lease_ttl' => $vault::default_lease_ttl,
+            'max_lease_ttl'     => $vault::max_lease_ttl,
+            'disable_mlock'     => $vault::disable_mlock,
+            'ui'                => $vault::enable_ui,
+            'api_addr'          => $vault::api_addr,
+        })
+      }
+      'agent': {
+        $_config_hash = delete_undef_values({
+            'vault'             => $vault::agent_vault,
+            'auto_auth'         => $vault::agent_auto_auth,
+            'cache'             => $vault::agent_cache,
+            'template'          => $vault::agent_template,
+            'listener'          => $vault::agent_listeners,
+            'exit_after_auth'   => $vault::agent_exit_after_auth,
+            'pid_file'          => $vault::agent_pid_file,
+        })
+      }
+      default: {
+        fail("Unsupported vault mode: ${vault::mode}")
+      }
+    }
 
     $config_hash = merge($_config_hash, $vault::extra_config)
 
