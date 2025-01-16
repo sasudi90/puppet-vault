@@ -1,12 +1,12 @@
 {
-  "name": "sasudi-vault",
+  "name": "puppet-vault",
   "version": "4.1.1-rc0",
   "author": "Vox Pupuli",
   "summary": "Puppet module to manage Vault (https://vaultproject.io)",
   "license": "Apache-2.0",
-  "source": "https://github.com/sasudi90/puppet-vault.git",
-  "project_page": "https://github.com/sasudi90/puppet-vault",
-  "issues_url": "https://github.com/sasudi90/puppet-vault/issues",
+  "source": "https://github.com/voxpupuli/puppet-vault.git",
+  "project_page": "https://github.com/voxpupuli/puppet-vault",
+  "issues_url": "https://github.com/voxpupuli/puppet-vault/issues",
   "tags": [
     "vault",
     "hashicorp",
