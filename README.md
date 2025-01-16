@@ -182,7 +182,7 @@ class { 'vault':
     'address' => 'https://vault.example.com:8200'
   },
   agent_auto_auth => {
-    'method' => {
+    'method' => [{
       'type'       => 'approle',
       'mount_path' => 'auth/approle',
       'config'     => {
@@ -190,7 +190,7 @@ class { 'vault':
         'secret_id_file_path' => '/etc/vault/secret-id'
       }
     }
-  },
+  }],
   agent_cache => {
     'use_auto_auth_token' => true
   },
