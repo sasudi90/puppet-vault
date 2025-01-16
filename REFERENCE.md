@@ -73,6 +73,16 @@ The following parameters are available in the `vault` class:
 * [`manage_config_file`](#-vault--manage_config_file)
 * [`download_filename`](#-vault--download_filename)
 * [`manage_config_dir`](#-vault--manage_config_dir)
+* [`agent_vault`](#-vault--agent_vault)
+* [`agent_auto_auth`](#-vault--agent_auto_auth)
+* [`agent_api_proxy`](#-vault--agent_api_proxy)
+* [`agent_cache`](#-vault--agent_cache)
+* [`agent_listeners`](#-vault--agent_listeners)
+* [`agent_template`](#-vault--agent_template)
+* [`agent_template_config`](#-vault--agent_template_config)
+* [`agent_exec`](#-vault--agent_exec)
+* [`agent_env_template`](#-vault--agent_env_template)
+* [`agent_telemetry`](#-vault--agent_telemetry)
 
 ##### <a name="-vault--user"></a>`user`
 
@@ -450,4 +460,84 @@ Data type: `Boolean`
 enable/disable the directory management. not required for package based installations
 
 Default value: `$install_method == 'archive'`
+
+##### <a name="-vault--agent_vault"></a>`agent_vault`
+
+Data type: `Optional[Hash]`
+
+Hash containing Vault server connection configuration for agent mode
+
+Default value: `undef`
+
+##### <a name="-vault--agent_auto_auth"></a>`agent_auto_auth`
+
+Data type: `Optional[Hash]`
+
+Hash containing auto-auth configuration for agent mode
+
+Default value: `undef`
+
+##### <a name="-vault--agent_api_proxy"></a>`agent_api_proxy`
+
+Data type: `Optional[Hash]`
+
+Hash containing API proxy configuration for agent mode
+
+Default value: `undef`
+
+##### <a name="-vault--agent_cache"></a>`agent_cache`
+
+Data type: `Optional[Hash]`
+
+Hash containing cache configuration for agent mode
+
+Default value: `undef`
+
+##### <a name="-vault--agent_listeners"></a>`agent_listeners`
+
+Data type: `Optional[Array[Hash]]`
+
+Array of hashes containing listener configuration for agent mode
+
+Default value: `undef`
+
+##### <a name="-vault--agent_template"></a>`agent_template`
+
+Data type: `Optional[Hash]`
+
+Hash containing template configuration for agent mode
+
+Default value: `undef`
+
+##### <a name="-vault--agent_template_config"></a>`agent_template_config`
+
+Data type: `Optional[Hash]`
+
+Hash containing template engine configuration for agent mode
+
+Default value: `undef`
+
+##### <a name="-vault--agent_exec"></a>`agent_exec`
+
+Data type: `Optional[Hash]`
+
+Hash containing exec configuration for agent mode
+
+Default value: `undef`
+
+##### <a name="-vault--agent_env_template"></a>`agent_env_template`
+
+Data type: `Optional[Hash]`
+
+Hash containing environment template configuration for agent mode
+
+Default value: `undef`
+
+##### <a name="-vault--agent_telemetry"></a>`agent_telemetry`
+
+Data type: `Optional[Hash]`
+
+Hash containing telemetry configuration for agent mode
+
+Default value: `undef`
 
