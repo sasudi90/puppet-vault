@@ -43,6 +43,7 @@ class vault::config {
             'listener'          => $vault::agent_listeners,
             'exit_after_auth'   => $vault::agent_exit_after_auth,
             'pid_file'          => $vault::agent_pid_file,
+            'telemetry'         => $vault::agent_telemety,
         })
       }
       default: {

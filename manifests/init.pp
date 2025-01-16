@@ -87,6 +87,7 @@
 # @param agent_vault
 # @param agent_exit_after_auth
 # @param agent_pid_file
+# @param agent_telemetry
 class vault (
   $user                                  = 'vault',
   $manage_user                           = true,
@@ -135,13 +136,14 @@ class vault (
   Hash $extra_config                     = {},
   Boolean $manage_config_dir             = $install_method == 'archive',
   # Agent specific parameters
-  String $agent_pid_file         = undef,
-  Hash $agent_auto_auth          = undef,
-  Optional[Hash] $agent_cache              = undef,
-  Optional[Hash] $agent_template           = undef,
-  Optional[Array[Hash]] $agent_listeners   = undef,
-  Optional[Hash] $agent_vault              = undef,
-  Optional[Boolean] $agent_exit_after_auth = undef,
+  String $agent_pid_file                    = undef,
+  Optional[Hash] $agent_auto_auth           = undef,
+  Optional[Hash] $agent_cache               = undef,
+  Optional[Hash] $agent_template            = undef,
+  Optional[Array[Hash]] $agent_listeners    = undef,
+  Optional[Hash] $agent_vault               = undef,
+  Optional[Boolean] $agent_exit_after_auth  = undef,
+  Optional[Hash] $agent_telemetry           = undef,
 ) inherits vault::params {
   # lint:ignore:140chars
   $real_download_url = pick($download_url, "${download_url_base}${version}/${package_name}_${version}_${os}_${arch}.${download_extension}")
