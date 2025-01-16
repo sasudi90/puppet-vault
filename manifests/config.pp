@@ -38,12 +38,14 @@ class vault::config {
         $_config_hash = delete_undef_values({
             'vault'             => $vault::agent_vault,
             'auto_auth'         => $vault::agent_auto_auth,
+            'api_proxy'         => $vault::agent_api_proxy,
             'cache'             => $vault::agent_cache,
-            'template'          => $vault::agent_template,
             'listener'          => $vault::agent_listeners,
-            'exit_after_auth'   => $vault::agent_exit_after_auth,
-            'pid_file'          => $vault::agent_pid_file,
-            'telemetry'         => $vault::agent_telemety,
+            'template'          => $vault::agent_template,
+            'template_config'   => $vault::agent_template_config,
+            'exec'              => $vault::exec,
+            'env_template'      => $vault::agent_env_template,
+            'telemetry'         => $vault::agent_telemetry,
         })
       }
       default: {
