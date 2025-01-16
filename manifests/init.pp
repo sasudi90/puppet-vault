@@ -50,44 +50,45 @@
 #
 # @param version The version of Vault to install
 #
-# @param mode start vault in server or agent mode
-# @param mode start vault in server or agent mode
-# @param extra_config
-# @param enable_ui
-# @param arch
-# @param os
-# @param manage_download_dir
-# @param download_dir
-# @param package_ensure
-# @param package_name
-# @param install_method
-# @param manage_file_capabilities
-# @param disable_mlock
-# @param max_lease_ttl
-# @param default_lease_ttl
-# @param telemetry
-# @param disable_cache
-# @param seal
-# @param ha_storage
-# @param listener
-# @param manage_storage_dir
-# @param storage
-# @param manage_service_file
-# @param service_ensure
-# @param service_enable
-# @param manage_config_file
-# @param download_filename
-# @param manage_config_dir enable/disable the directory management. not required for package based installations
+# @param mode Whether to start vault in 'server' or 'agent' mode
+# @param extra_config Hash containing extra configuration options to merge with the generated config
+# @param enable_ui Whether to enable the Vault web UI
+# @param arch System architecture for the Vault binary (automatically determined)
+# @param os Operating system for the Vault binary (automatically determined)
+# @param manage_download_dir Whether to manage the download directory
+# @param download_dir Directory where the Vault archive will be downloaded
+# @param package_ensure The state the package should be in (installed, absent, latest)
+# @param package_name Name of the Vault package
+# @param install_method Installation method: 'archive' or 'repo'
+# @param manage_file_capabilities Whether to manage Linux file capabilities for vault binary
+# @param disable_mlock Whether to disable the memory lock capability
+# @param max_lease_ttl Specifies the maximum possible lease duration for tokens and secrets
+# @param default_lease_ttl Specifies the default lease duration for tokens and secrets
+# @param telemetry Hash containing Vault telemetry configuration
+# @param disable_cache Disable caching
+# @param seal Hash containing seal configuration options
+# @param ha_storage Hash containing storage configuration for HA setup
+# @param listener Hash or Array of hashes containing listener configuration
+# @param manage_storage_dir Whether to manage the storage directory
+# @param storage Hash containing storage configuration
+# @param manage_service_file Whether to manage the service file
+# @param service_ensure Desired state of the Vault service (running, stopped)
+# @param service_enable Whether to enable the Vault service on boot
+# @param manage_config_file Whether to manage the Vault config file
+# @param download_filename Filename for the downloaded archive
+# @param manage_config_dir Whether to manage the configuration directory
 #
 # Agent specific parameters
-# @param agent_auto_auth
-# @param agent_cache
-# @param agent_template
-# @param agent_listeners
-# @param agent_vault
-# @param agent_exit_after_auth
-# @param agent_pid_file
-# @param agent_telemetry
+# @param agent_vault Hash containing Vault server connection configuration for agent mode
+# @param agent_auto_auth Hash containing auto-auth configuration for agent mode
+# @param agent_api_proxy Hash containing API proxy configuration for agent mode
+# @param agent_cache Hash containing cache configuration for agent mode
+# @param agent_listeners Array of hashes containing listener configuration for agent mode
+# @param agent_template Hash containing template configuration for agent mode
+# @param agent_template_config Hash containing template engine configuration for agent mode
+# @param agent_exec Hash containing exec configuration for agent mode
+# @param agent_env_template Hash containing environment template configuration for agent mode
+# @param agent_telemetry Hash containing telemetry configuration for agent mode
 class vault (
   $user                                  = 'vault',
   $manage_user                           = true,
